@@ -1,0 +1,2 @@
+localhost:3000/produtos
+localhost:3000/departments
