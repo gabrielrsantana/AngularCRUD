@@ -1,0 +1,116 @@
+o servidor roda na http://localhost:3000/departments
+e outra localhost:4200
+
+-cria uma pasta (completa)e dentro dela cria uma pasta chamada servidor:
+-dentro de servidor digita no prompt:
+
+npm init
+
+-instalar mongoose,cor e express:
+
+npm install --save express cors mongoose
+
+- criA UM ARQUIVO CHAMADO dentro do servidor
+app.js
+
+-digita no vscode
+const express = require('express');
+const cors = require('cors');
+const mongoose= require('mongoose');
+// const department = require('./department');
+const department_controller = require('./department_controller');
+
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(cors());
+
+//mongodb.com, banco usado na biblioteca
+mongoose.connect("mongodb+srv://gabriel_rocha:gabriel_rocha@cluster0.uucs8.mongodb.net/aplicacao_http?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+
+app.use('/departments',department_controller);
+
+
+app.listen(3000);
+
+//no inicio vai retornar [] no brozwe, porque nao tem nada no banco
+
+------------
+parte do front end:
+
+-na pasta completa cria no prompt
+
+ ng new front
+
+-entra na pasta front:
+ ng add @angular/material
+
+
+-copia o arquivo de lucas do material.module.ts, que tem todos os imports
+
+-instala o flex
+npm install --save @angular/flex-layout
+
+-coloca o import FlexLayoutModule e coloca no app.module
+-no arquivo material.module.ts
+import { FlexLayoutModule } from '@angular/flex-layout';
+.
+.
+.
+export class MaterialModule {} //estava como DemoMaterialModule {}
+
+-agora importa no app.module.ts
+import { MaterialModule } from './material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+ imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule, //importa do arquivo
+    FormsModule,
+    ReactiveFormsModule, //faz validacoes
+    HttpClientModule   //pra fazer requisicoes 
+  ],
+
+
+- criar o componente para departamento (-m app significa
+- que esta vinculado ao app module)
+ng g c Department -m app
+
+-no app.module.ts ver se foi declarados
+  declarations: [
+    AppComponent,
+    DepartmentComponent //criado depois que criou o componente
+  ],
+
+-criando o  servico:
+ng g s Department
+
+- criando a interface Department
+ng g interface Department
+
+- no department.service.ts
+cria os metodos..
+
+
+- depois vai no component. e chama os metodos criados
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
