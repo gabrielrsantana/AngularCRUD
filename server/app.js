@@ -12,8 +12,10 @@ app.use(express.urlencoded({extended:true}));
 //that can be used to enable CORS with various options.
 app.use(cors());
 
-//mongodb.com, banco usado na biblioteca
-mongoose.connect("mongodb+srv://gabriel_rocha:gabriel_rocha@cluster0.uucs8.mongodb.net/aplicacao_http?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+//Conexão ao https://cloud.mongodb.com/, banco usado na biblioteca
+//usuario e senha foram modificados para privacidade
+//ga*****_****cha
+mongoose.connect("mongodb+srv://usuario123:senha123@cluster0.uucs8.mongodb.net/aplicacao_http?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 //departamento
