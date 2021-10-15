@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
         if (err)
             res.status(500).send(err)
         else
-            res.status(200).send(deps>)
+            res.status(200).send(deps)
     })
 
 });
