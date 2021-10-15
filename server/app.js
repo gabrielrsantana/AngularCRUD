@@ -8,6 +8,8 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+//CORS is a node.js package for providing a Connect/Express middleware 
+//that can be used to enable CORS with various options.
 app.use(cors());
 
 //mongodb.com, banco usado na biblioteca
