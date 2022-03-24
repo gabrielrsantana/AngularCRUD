@@ -3,9 +3,9 @@ const cors = require('cors');
 const mongoose= require('mongoose');
 const department_controller = require('./department_controller');
 const produto_controller = require('./produto_controller')
-
 const app = express();
 
+//configurações
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 //CORS is a node.js package for providing a Connect/Express middleware 
